@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Online Assessment Form</title>
+    <style>
+        ul, #myUL {
+            list-style-type: none;
+        }
+
+        #myUL {
+            margin: 0;
+            padding: 0;
+        }
+
+        .question {
+            cursor: pointer;
+            -webkit-user-select: none; /* Safari 3.1+ */
+            -moz-user-select: none; /* Firefox 2+ */
+            -ms-user-select: none; /* IE 10+ */
+            user-select: none;
+        }
+
+            .question::before {
+                content: "\25B6";
+                color: black;
+                display: inline-block;
+                margin-right: 6px;
+            }
+
+        .question-down::before {
+            -ms-transform: rotate(90deg); /* IE 9 */
+            -webkit-transform: rotate(90deg); /* Safari */
+            ' transform: rotate(90deg);
+        }
+
+        .nested {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Online Assessment Form</h1>
+    <div>
+        Assessment Name :<input id="Text1" type="text" /><br /><br />
+        Number of Questions :<input id="Text1" type="text" /><br /><br />
+        Level of Difficulty : Easy<input id="Radio1" type="radio" /> Medium<input id="Radio1" type="radio" /> Difficult<input id="Radio1" type="radio" /><br /><br />
+        Passing Marks : <input id="Text1" type="text" /><br /><br />
+        Subject :
+        <select>
+            <option value="Select a Subject">Select a Subject</option>
+            <option value="Anatomy">Anatomy</option>
+            <option value="Biochemistry">Biochemistry</option>
+            <option value="SPM">SPM</option>
+            <option value="Surgery">Surgery</option>
+        </select><br /><br />
+        Topics:
+        <select>
+            <option value="Select a Topic">Select a Topic</option>
+            <option value="Anatomy of Upper Limb">Anatomy of Upper Limb</option>
+            <option value="Anatomy of Lower Limb">Anatomy of Lower Limb</option>
+        </select><br /><br />
+                    <!--this is comments-->
+                <ul id="myUL">
+                    <li>
+                        <span class="question">Level of Difficulty</span>
+                        <ul class="nested">
+                            <li>
+                            <span class="question">Easy()</span>
+                                <ul class="nested">
+                                    <li>Clinical()</li>
+                                    <li>Memory()</li>
+                                    <li>Conceptual()</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="question">Medium()</span>
+                                <ul class="nested">
+                                    <li>Clinical()</li>
+                                    <li>Memory()</li>
+                                    <li>Conceptual()</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="question">Difficult()</span>
+                                <ul class="nested">
+                                    <li>Clinical()</li>
+                                    <li>Memory()</li>
+                                    <li>Conceptual()</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <script>
+            var toggler = document.getElementsByClassName("question");
+var i;
+
+for (i = 0; i < toggler.length; i++) {
+  toggler[i].addEventListener("click", function() {
+    this.parentElement.querySelector(".nested").classList.toggle("active");
+      this.classList.toggle("question-down");
+  });
+}
+        </script>
+</body>
+</html>
