@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Online Assessment Form</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
         ul, #myUL {
             list-style-type: none;
@@ -12,6 +13,9 @@
         #myUL {
             margin: 0;
             padding: 0;
+        }
+
+        .container {
         }
 
         .question {
@@ -45,70 +49,74 @@
     </style>
 </head>
 <body>
-    <h1>Online Assessment Form</h1>
+    <div class="w3-container w3-orange">
+        <h1 align="center">Online Assessment Form</h1>
+    </div>
     <div>
-        Assessment Name :<input id="Text1" type="text" /><br /><br />
-        Number of Questions :<input id="Text1" type="text" /><br /><br />
-        Level of Difficulty : Easy<input id="Radio1" type="radio" /> Medium<input id="Radio1" type="radio" /> Difficult<input id="Radio1" type="radio" /><br /><br />
-        Passing Marks : <input id="Text1" type="text" /><br /><br />
-        Subject :
-        <select>
-            <option value="Select a Subject">Select a Subject</option>
-            <option value="Anatomy">Anatomy</option>
-            <option value="Biochemistry">Biochemistry</option>
-            <option value="SPM">SPM</option>
-            <option value="Surgery">Surgery</option>
-        </select><br /><br />
-        Topics:
-        <select>
-            <option value="Select a Topic">Select a Topic</option>
-            <option value="Anatomy of Upper Limb">Anatomy of Upper Limb</option>
-            <option value="Anatomy of Lower Limb">Anatomy of Lower Limb</option>
-        </select><br /><br />
-                    <!--this is comments-->
-                <ul id="myUL">
-                    <li>
-                        <span class="question">Level of Difficulty</span>
-                        <ul class="nested">
-                            <li>
+        <form class="w3-container">
+            Assessment Name :<input class="" id="Text1" type="text" /><br /><br />
+            Number of Questions :<input id="Text1" type="text" /><br /><br />
+            Level of Difficulty : Easy<input id="Radio1" type="radio" /> Medium<input id="Radio1" type="radio" /> Difficult<input id="Radio1" type="radio" /><br /><br />
+            Passing Marks : <input id="Text1" type="text" /><br /><br />
+            Subject :
+            <select>
+                <option value="Select a Subject">Select a Subject</option>
+                <option value="Anatomy">Anatomy</option>
+                <option value="Biochemistry">Biochemistry</option>
+                <option value="SPM">SPM</option>
+                <option value="Surgery">Surgery</option>
+            </select><br /><br />
+            Topics:
+            <select>
+                <option value="Select a Topic">Select a Topic</option>
+                <option value="Anatomy of Upper Limb">Anatomy of Upper Limb</option>
+                <option value="Anatomy of Lower Limb">Anatomy of Lower Limb</option>
+            </select><br /><br />
+            <!--this is comments-->
+            <ul id="myUL">
+                <li>
+                    <span class="question">Level of Difficulty</span>
+                    <ul class="nested">
+                        <li>
                             <span class="question">Easy()</span>
-                                <ul class="nested">
-                                    <li>Clinical()</li>
-                                    <li>Memory()</li>
-                                    <li>Conceptual()</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <span class="question">Medium()</span>
-                                <ul class="nested">
-                                    <li>Clinical()</li>
-                                    <li>Memory()</li>
-                                    <li>Conceptual()</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <span class="question">Difficult()</span>
-                                <ul class="nested">
-                                    <li>Clinical()</li>
-                                    <li>Memory()</li>
-                                    <li>Conceptual()</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <script>
-            var toggler = document.getElementsByClassName("question");
-var i;
+                            <ul class="nested">
+                                <li>Clinical()</li>
+                                <li>Memory()</li>
+                                <li>Conceptual()</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="question">Medium()</span>
+                            <ul class="nested">
+                                <li>Clinical()</li>
+                                <li>Memory()</li>
+                                <li>Conceptual()</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="question">Difficult()</span>
+                            <ul class="nested">
+                                <li>Clinical()</li>
+                                <li>Memory()</li>
+                                <li>Conceptual()</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+    </div>
+    </div>
+    </form>
+    <script>
+        var toggler = document.getElementsByClassName("question");
+        var i;
 
-for (i = 0; i < toggler.length; i++) {
-  toggler[i].addEventListener("click", function() {
-    this.parentElement.querySelector(".nested").classList.toggle("active");
-      this.classList.toggle("question-down");
-  });
-}
-        </script>
+        for (i = 0; i < toggler.length; i++) {
+            toggler[i].addEventListener("click", function () {
+                this.parentElement.querySelector(".nested").classList.toggle("active");
+                this.classList.toggle("question-down");
+            });
+        }
+    </script>
 </body>
 </html>
